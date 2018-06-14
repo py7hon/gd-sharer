@@ -47,10 +47,10 @@ if($_GET[id]) {
 			if($copy[id]) {
 								
 				echo "
-					<meta http-equiv=\"refresh\" content=\"5;URL='https://docs.google.com/uc?id=$copy[id]'\" />
+					<meta http-equiv=\"refresh\" content=\"5;URL='https://drive.google.com/file/d/$copy[id]/view'\" />
 					<div style=\"padding: 50px 15px;text-align: center;background-color: #fff;\">
 						<h2>Thank you for downloading!</h2><br />
-						If your download doesn't start automatically within a few seconds, <a href=\"https://docs.google.com/uc?id=$copy[id]\">click here</a>.
+						If your download doesn't start automatically within a few seconds, <a href=\"https://drive.google.com/file/d/$copy[id]/view\">click here</a>.
 					</div>";
 								
 			} else {
