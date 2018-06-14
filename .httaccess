@@ -1,0 +1,34 @@
+RewriteEngine On
+
+ErrorDocument 404 /index.php
+ErrorDocument 403 /index.php
+
+# Uncomment the following to redirect all visitors to the www version
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Uncomment the following to redirect all visitors to non www version
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ http://%1%{REQUEST_URI} [L,R=301]
+
+RewriteBase /
+
+RewriteRule ^page/([^/]*)$ index.php?page=$1 [L]
+RewriteRule ^file/([^/]*)/embed/([^/]*)$ /download.php?id=$1&embed=$2 [L]
+RewriteRule ^file/([^/]*)/code/([^/]*)$ /download.php?id=$1&code=$2 [L]
+RewriteRule ^file/([^/]*)/([^/]*)$ /download.php?id=$1&slug=$2 [L]
+RewriteRule ^file/([^/]*)$ download.php?id=$1 [L]
+
+# NGINX
+# location /file { 
+# rewrite ^/file/([^/]*)/code/([^/]*)$ /download.php?id=$1&code=$2;
+# rewrite ^/file/([^/]*)/embed/([^/]*)$ /download.php?id=$1&embed=$2;
+# rewrite ^/file/([^/]*)$ /download.php?id=$1;
+# }
+
+# location ~* ^/base/data/config/.*\.json$ { deny all; }
+# location ~* ^/base/data/user/.*\.json$ { deny all; }
+# location ~* ^/base/data/main/share/.*\.json$ { deny all; }
+
+
+
