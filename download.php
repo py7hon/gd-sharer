@@ -9,6 +9,7 @@ if($_GET[id]) {
 
 	$share = json_decode(file_get_contents("base/data/main/share/$_GET[id].json"), true);
 	$users = json_decode(file_get_contents("base/data/user/".$share[file][user_id].".json"),true);
+    $kontol = $share[file][file_id];
 	
 	if(isset($share[file][title])) {
 
@@ -115,7 +116,8 @@ if($_GET[id]) {
 			}
 
 			echo "
-				<table class=\"table table-striped\">
+				<center><iframe src='https://drive.0wo.me/player?id=$kontol'frameborder='0' width='480' height='240'></iframe></center>
+                <table class=\"table table-striped\">
 					<thead><tr><h1>File Informations</h1></tr></thead>
 					<tbody>
 						<tr valign=\"top\">
