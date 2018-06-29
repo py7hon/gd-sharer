@@ -8,7 +8,7 @@
 ### Install
 
 
-1. Create an OAuth 2.0 client ID (see video), when you finish opening the config file base/data/settings/config.json
+1. Create an OAuth 2.0 client ID [See Video](https://www.youtube.com/watch?v=o425vQXpigw), when you finish opening the config file base/data/settings/config.json
 
 2. edit
 
