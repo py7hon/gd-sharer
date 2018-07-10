@@ -15,12 +15,18 @@ if($_SESSION[email]) {
 } else {
 
 	echo "
-		<div class=\"jumbotron\">
-			<h1>".config('site.title')."</h1>
-			<p>
-				".config('site.description')."
-			</p>
+	<div class=\"jumbotron\">
+			<center><img style=\"text-align:center\" src=\"\">
+</center>		<h1 style=\"text-align:center;font-size:3em;font-weight:bold;text-transform:uppercase\">".config('site.title')."</h1>
+		<p style=\"text-align:center;font-size:1em;font-weight:bold;text-transform:uppercase\">".config('site.description')."</p>
+<br>
+				  <p style=\"text-align:center\">
+
+						<a href=\"http://blog.0wo.me\" class=\"btn btn-primary\">Cari file..</a>
+				  </p>
 		</div>
+
+		
 		";
 
 }
