@@ -15,8 +15,153 @@ if(!empty($title)) {
 
 echo "
 <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />
+<link href=\"https://cdn.jsdelivr.net/npm/vuesax/dist/vuesax.css\" rel=\"stylesheet\">
 <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">
-<style>.content-wrap{margin:0 auto;padding:2em 15px 5em;max-width:1000px}.page-header{margin:0 0 20px 0;}img {max-width: 100%;height: auto;}</style>
+<style media=\"screen\">.content-wrap{margin:0 auto;padding:2em 15px 5em;max-width:1000px}
+	.page-header{margin:0 0 20px 0;}
+	img {max-width: 100%;height: auto;}
+	.navnav{background-color:#F8F8FF; border:none}
+	.navnav a{color:black !important}
+	.navnav a:hover{color:rgb(158, 158, 158) !important}
+	.jumbotron{background-color:#F8F8FF;border:8px solid #eee}
+body{background-color:#FFF}
+.form-group {
+margin-bottom: 0;
+padding: 10px 0;
+}
+.form-group:first-child {
+border-color: transparent;
+}
+
+.form-control {
+-webkit-box-shadow: none;
+box-shadow: none;
+border-width: 2px;
+min-height: 40px;
+height: auto;
+}
+.form-control:focus {
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+
+.form-vertical {
+counter-reset: fieldset;
+}
+.form-vertical fieldset {
+padding-top: 10px;
+margin: 50px 0;
+}
+.form-vertical fieldset > legend:before {
+content: counter(fieldset);
+counter-increment: fieldset;
+position: absolute;
+left: -25px;
+width: 30px;
+height: 30px;
+line-height: 30px;
+border-radius: 15px;
+text-align: center;
+background: #428bca;
+color: white;
+font-size: 75%;
+font-weight: bold;
+}
+
+label.checkbox {
+margin-bottom: 15px;
+position: relative;
+}
+label.checkbox .icheckbox_square-blue {
+position: absolute;
+top: 0;
+left: 0;
+}
+label.checkbox input {
+position: absolute;
+left: 0;
+top: 0;
+}
+label.checkbox span {
+padding-left: 35px;
+display: block;
+}
+
+.radio label {
+padding-left: 0;
+}
+.radio span {
+vertical-align: middle;
+margin-left: 5px;
+}
+
+.btn {
+height: 40px;
+padding: 10px 16px;
+border-radius: 3px;
+min-width: 80px;
+}
+
+.btn-group.radio-group .btn {
+height: 50px;
+line-height: 22px;
+padding: 12px 20px;
+}
+.btn-group.radio-group .btn span {
+line-height: 22px;
+vertical-align: middle;
+margin-left: 5px;
+}
+
+/* bootstrap select styles */
+.bootstrap-select .btn {
+min-height: 40px;
+border-width: 2px;
+-webkit-box-shadow: none;
+box-shadow: none;
+outline: 0;
+}
+.bootstrap-select .btn:hover {
+background: white;
+}
+
+.bootstrap-select .btn:focus,
+.bootstrap-select.btn-group.open .dropdown-toggle {
+border-color: #428bca;
+background: white;
+outline: 0;
+}
+
+.bootstrap-select .btn.bootstrap-select.btn-group.open .dropdown-toggle {
+border-color: #428bca;
+color: white;
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+background: #428bca;
+color: white;
+}
+
+label {
+cursor: pointer;
+}
+
+:-ms-input-placeholder {
+color: #ccc;
+}
+
+::-moz-placeholder {
+color: #ccc;
+}
+
+::-webkit-input-placeholder {
+color: #ccc;
+}
+
+</style>
 ".head_content();
 
 if($_GET[id]) {
@@ -34,7 +179,7 @@ if($_GET[id]) {
 echo "
 	</head>
 	<body>
-		<nav class=\"navbar navbar-inverse navbar-static-top\">
+		<nav cclass=\"navbar navbar-default navbar-static-top navnav\">
 			<div class=\"container\">
 			<div class=\"navbar-header\">
 				<button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">
@@ -97,7 +242,10 @@ if($_SESSION[email]) {
 	echo "
 		<ul class=\"nav navbar-nav navbar-right\">
 		<li>
-			<a href=\"/login.php\"><span class=\"glyphicon glyphicon-log-in\" aria-hidden=\"true\"></span> Login</a>
+			<a href=\"/login.php\">Login</a>
+		</li>
+		<li>
+		<a href=\"/https://accounts.google.com/SignUp?hl=in\">Register</a>
 		</li>";
 
 }
